@@ -1,0 +1,29 @@
+// ✅ src/assets/scss/_var.scss
+
+// 🎨 색상 팔레트
+$main-color: #0ea5e9;   
+  // 메인 포인트 (하늘색)
+$sub-color: #0f172a;      
+// 보조 배경 (남색)
+$gray-line: #e5e7eb;      
+// 연한 회색 테두리
+$bg-light: #f9fafb;       
+// 전체 배경
+$text-dark: #111827;      
+// 진한 텍스트
+$text-light: #f3f4f6;     
+// 밝은 텍스트
+
+// 🧱 여백 / 반경
+$radius: 12px;
+$gap: 16px;
+
+// 📱 반응형 breakpoint (px 단위)
+$bp-sm: 520;
+$bp-md: 768;
+$bp-lg: 1024;
+$bp-xl: 1280;
+
+// 💨 그림자 공통
+$shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.06);
+$shadow-hard: 0 8px 20px rgba(0, 0, 0, 0.15);

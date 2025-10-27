@@ -1,0 +1,152 @@
+@use 'sass:color';
+@use '../assets/scss/var' as v;
+@use '../assets/scss/mixin' as m;
+
+
+.wrap {
+  padding: 24px;
+  background: v.$bg-light;
+}
+
+.title {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  color: v.$text-dark;
+  margin: 0 0 16px;
+  letter-spacing: .2px;
+}
+
+.empty {
+  color: #888;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid v.$gray-line;
+  border-radius: v.$radius;
+  padding: 8px;
+  box-shadow: v.$shadow-soft;
+
+  @include m.respond(v.$bp-sm) {
+    grid-template-columns: 64px 1fr;
+    grid-auto-rows: auto;
+  }
+}
+
+.item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: v.$radius;
+
+  @include m.respond(v.$bp-sm) {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.info {
+  display: grid;
+  gap: 6px;
+}
+
+.name {
+  font-weight: 700;
+  color: v.$text-dark;
+}
+
+.unit {
+  color: #666;
+  font-size: 14px;
+}
+
+.qtyRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  button {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 1px solid v.$gray-line;
+    background: #f7f7f7;
+    cursor: pointer;
+  }
+}
+
+.qty {
+  min-width: 22px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.remove {
+  border: 1px solid v.$gray-line;
+  background: #fff;
+  border-radius: v.$radius;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.subtotal {
+  font-weight: 700;
+  justify-self: end;
+
+  @include m.respond(v.$bp-sm) {
+    justify-self: start;
+  }
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding: 12px;
+  border-top: 1px dashed v.$gray-line;
+  color: v.$text-dark;
+
+  @include m.respond(v.$bp-sm) {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+
+  @include m.respond(v.$bp-sm) {
+    justify-content: stretch;
+
+    button {
+      flex: 1;
+    }
+  }
+}
+
+.clear {
+  border: 1px solid v.$gray-line;
+  background: #fff;
+  border-radius: v.$radius;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.checkout {
+  background-color: skyblue;
+}

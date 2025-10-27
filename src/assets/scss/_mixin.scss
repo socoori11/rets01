@@ -1,0 +1,54 @@
+// ✅ src/assets/scss/_mixin.scss
+@use './_var' as *;
+@use 'sass:color';
+
+// 🔹 중앙 정렬 (flex)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 🔹 가로 세로 중앙 + column 정렬
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// 🔹 반응형 헬퍼
+@mixin respond($bp) {
+  @media (max-width: #{$bp}px) {
+    @content;
+  }
+}
+
+// 🔹 버튼 스타일 (색상 전달)
+@mixin button-style($bg: $main-color, $color: #fff) {
+  background-color: $bg;
+  color: $color;
+  padding: 8px 16px;
+  border: none;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+   background-color: color.adjust($bg, -8%);
+  }
+}
+
+// 🔹 카드 스타일 (공통 박스)
+@mixin card {
+  background: #fff;
+  border-radius: $radius;
+  box-shadow: $shadow-soft;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-hard;
+  }
+}

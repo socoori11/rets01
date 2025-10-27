@@ -1,0 +1,85 @@
+@use '../assets/scss/var' as v;
+@use '../assets/scss/mixin' as m;
+@use 'sass:color';
+
+.wrap {
+  padding: 24px;
+  background: v.$bg-light;
+}
+
+.title {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  color: v.$text-dark;
+  margin: 0 0 16px;
+  letter-spacing: .2px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.card {
+  @include m.card;              // 공통 카드 스타일
+  border: 1px solid v.$gray-line;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.body {
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.name {
+  font-weight: 700;
+  color: v.$text-dark;
+}
+
+.price {
+  color: #444;
+}
+
+.qtyRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  button {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 1px solid v.$gray-line;
+    background: #f7f7f7;
+    cursor: pointer;
+  }
+}
+
+.qty {
+  min-width: 22px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.addBtn {
+  background-color: skyblue;
+  width: 100%;
+}
+
+@include m.respond(v.$bp-md) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
